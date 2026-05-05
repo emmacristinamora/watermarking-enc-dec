@@ -49,3 +49,4 @@ generate_decoder_dataset:
     dataset_dir: "part1-encoding/data/decoder-dataset"
     metadata_file: "metadata.json"
     splits_file: "splits.json"
+    baseline_dir: "part1-encoding/data/baseline"
