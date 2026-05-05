@@ -1,0 +1,9 @@
+- target: ""
+  positive: "high contrast, stark contrast, deep blacks, bright whites"
+  unconditional: "low contrast, flat, muted, washed out, grey"
+  neutral: ""
+  action: "enhance"
+  guidance_scale: 4
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

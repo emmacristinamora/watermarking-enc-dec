@@ -1,0 +1,9 @@
+- target: ""
+  positive: "sharp, crisp, high definition, in focus, ultra sharp"
+  unconditional: "soft, blurry, out of focus, dreamy, hazy"
+  neutral: ""
+  action: "enhance"
+  guidance_scale: 4
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

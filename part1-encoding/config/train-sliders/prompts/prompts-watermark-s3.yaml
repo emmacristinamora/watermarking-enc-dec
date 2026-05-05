@@ -1,0 +1,9 @@
+- target: ""
+  positive: "film grain, noisy, grainy texture, analog noise"
+  unconditional: "clean, smooth, noise-free, pristine"
+  neutral: ""
+  action: "enhance"
+  guidance_scale: 4
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

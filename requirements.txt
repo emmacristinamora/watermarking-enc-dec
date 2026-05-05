@@ -1,0 +1,32 @@
+# conda env => cv-watermark
+# works best with python 3.12
+
+# === base ML ===
+torch>=2.1.0
+torchvision>=0.16.0
+numpy>=1.24
+pandas>=2.0
+
+
+# === diffusion model (part 1 — encoding) ===
+diffusers>=0.28.0
+transformers>=4.41.0
+accelerate>=0.30.0
+safetensors>=0.4.0
+huggingface_hub>=0.23.0
+peft>=0.10.0
+
+
+# === image processing ===
+Pillow>=10.0.0
+
+
+# === decoder training + evaluation (part 2 & 3) ===
+scikit-learn>=1.3.0
+torch-cam>=0.3.2
+
+
+# === viz & config + utils ===
+pyyaml>=6.0
+tqdm>=4.66
+matplotlib>=3.8

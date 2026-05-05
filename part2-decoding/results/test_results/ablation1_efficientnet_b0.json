@@ -1,0 +1,20 @@
+{
+  "experiment": "ablation1_efficientnet_b0",
+  "architecture": "efficientnet_b0",
+  "checkpoint_epoch": 28,
+  "val_exact_match": 0.59375,
+  "test_metrics": {
+    "mean_bit_accuracy": 0.92578125,
+    "exact_match_rate": 0.546875,
+    "per_bit_accuracy": [
+      0.921875,
+      0.93359375,
+      0.95703125,
+      0.859375,
+      0.87109375,
+      0.91015625,
+      1.0,
+      0.953125
+    ]
+  }
+}

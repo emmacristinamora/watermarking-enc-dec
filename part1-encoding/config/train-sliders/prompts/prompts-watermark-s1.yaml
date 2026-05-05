@@ -1,0 +1,9 @@
+- target: ""
+  positive: "warm tones, golden hour, warm lighting, amber, warm color grading"
+  unconditional: "cool tones, cold lighting, blue tones, cool color grading"
+  neutral: ""
+  action: "enhance"
+  guidance_scale: 4
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

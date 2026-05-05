@@ -1,0 +1,9 @@
+- target: ""
+  positive: "highly saturated, vivid colors, vibrant, colorful, rich colors"
+  unconditional: "desaturated, muted colors, faded, washed out, monochrome"
+  neutral: ""
+  action: "enhance"
+  guidance_scale: 4
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

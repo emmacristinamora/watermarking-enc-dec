@@ -1,0 +1,9 @@
+- target: ""
+  positive: "highly detailed, intricate, fine details, textured, complex"
+  unconditional: "smooth, simplified, minimal detail, flat, plain"
+  neutral: ""
+  action: "enhance"
+  guidance_scale: 4
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

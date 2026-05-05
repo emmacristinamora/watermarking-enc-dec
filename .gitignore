@@ -1,0 +1,28 @@
+# mac
+.DS_Store
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# data (large files — transfer via rsync, not git)
+part1_encoding/data/
+data/experts/training-outputs/
+
+# outputs / logs
+outputs/
+logs/
+out/
+err/
+
+# env / caches
+.env
+.venv/
+miniconda3/
+
+# editor
+.vscode/
+.idea/

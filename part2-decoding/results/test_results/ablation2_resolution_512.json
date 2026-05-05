@@ -1,0 +1,11 @@
+{
+  "experiment": "ablation2_resolution_512",
+  "architecture": "resnet50",
+  "checkpoint_epoch": 19,
+  "val_exact_match": 0.6289,
+  "test_metrics": {
+    "mean_bit_accuracy": 0.9390,
+    "exact_match_rate": 0.6367,
+    "per_bit_accuracy": [0.9258, 0.9453, 0.9609, 0.8906, 0.8984, 0.9492, 0.9922, 0.9492]
+  }
+}

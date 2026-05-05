@@ -1,0 +1,9 @@
+- target: ""
+  positive: "bright, high exposure, overexposed, luminous, well lit"
+  unconditional: "dark, low exposure, underexposed, dim, shadowy"
+  neutral: ""
+  action: "enhance"
+  guidance_scale: 4
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

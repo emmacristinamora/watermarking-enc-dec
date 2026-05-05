@@ -1,0 +1,51 @@
+# part1-encoding/config/generate_decoder_data.yaml
+
+
+# === GENERATE DECODER DATASET ===
+
+# Configuration for watermarked image generation and train/test split.
+# Each of the 256 IDs encodes a unique 8-bit watermark via 8 LoRA style sliders.
+# Bit=1 activates the slider's positive direction (+scale), bit=0 activates
+# the negative direction (-scale), injected at a fixed denoising step.
+# Used by: part1-encoding/src/02_generate_decoder_dataset.py
+
+generate_decoder_dataset:
+  model:
+    name_or_path: "stabilityai/stable-diffusion-xl-base-1.0"
+    dtype: "bfloat16"
+    device: "cuda"
+  loras:
+    dir: "part1-encoding/data/trained-loras"
+    checkpoint: "last"          # "last" or "500steps"
+    alpha: 1.0
+    rank: 4
+    training_method: "noxattn"
+    adapter_prefix: "s"         # adapters registered as s1, s2, ..., s8
+  watermark:
+    num_bits: 8
+    num_ids: 256                # IDs 0-255, each a unique 8-bit pattern
+    scale: 0.3                  # LoRA weight magnitude: +scale for bit=1, -scale for bit=0
+    activate_at_step: 25        # denoising step at which sliders are activated (out of num_steps)
+  inference:
+    num_steps: 30
+    seed: 42                    # base seed; per-prompt seed = seed + prompt_idx
+  prompts:
+    - "a mountain landscape at sunset"
+    - "a beach with calm waves"
+    - "a forest path in autumn"
+    - "a snowy village at night"
+    - "a city street at noon"
+    - "a modern kitchen interior"
+    - "a field of flowers in sunlight"
+    - "a lighthouse on a rocky coast"
+    - "a desert landscape at dawn"
+    - "a cobblestone street in a old town"
+  split:
+    seed: 42
+    train_prompts_per_id: 8     # out of 10 prompts per ID
+    val_prompts_per_id: 1       # 1 prompt per ID → 256 validation images
+    test_prompts_per_id: 1      # 1 prompt per ID → 256 test images
+  output:
+    dataset_dir: "part1-encoding/data/decoder-dataset"
+    metadata_file: "metadata.json"
+    splits_file: "splits.json"
