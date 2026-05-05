@@ -46,7 +46,7 @@ generate_decoder_dataset:
     val_prompts_per_id: 1       # 1 prompt per ID → 256 validation images
     test_prompts_per_id: 1      # 1 prompt per ID → 256 test images
   output:
-    dataset_dir: "part1-encoding/data/decoder-dataset"
+    dataset_dir: "part1-encoding/data/decoder-dataset/watermarked-data"
     metadata_file: "metadata.json"
     splits_file: "splits.json"
-    baseline_dir: "part1-encoding/data/baseline"
+    baseline_dir: "part1-encoding/data/decoder-dataset/baseline"

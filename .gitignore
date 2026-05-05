@@ -9,8 +9,10 @@ __pycache__/
 .ipynb_checkpoints/
 
 # data (large files — transfer via rsync, not git)
-part1_encoding/data/
-data/experts/training-outputs/
+part1_encoding/data/decoder-dataset/watermarked-data/train/
+part1_encoding/data/decoder-dataset/watermarked-data/val/
+part1_encoding/data/decoder-dataset/watermarked-data/test/
+part1_encoding/data/decoder-dataset/baseline/
 
 # outputs / logs
 outputs/

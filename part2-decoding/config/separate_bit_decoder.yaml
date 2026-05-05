@@ -1,0 +1,31 @@
+# part2-decoding/config/separate_bit_decoder.yaml
+
+
+# === SEPARATE BIT DECODER ===
+
+# Config for 02_train_bit_decoder.py.
+# Trains 8 independent ResNet-50 binary classifiers, one per watermark bit.
+# Each bit has its own optimizer and cosine LR schedule; best checkpoint per
+# bit is selected by val accuracy. The ensemble is then evaluated on val + test.
+
+separate_bit_decoder:
+  data:
+    images_dir: "part1-encoding/data/decoder-dataset/watermarked-data"
+    metadata_file: "metadata.json"
+    splits_file: "splits.json"
+    num_bits: 8
+    num_workers: 4
+
+  model:
+    pretrained: true
+    image_size: 1024
+    batch_size: 16
+
+  training:
+    seed: 42
+    num_epochs: 25
+    learning_rate: 0.0001    # cosine annealed to 0 over num_epochs
+
+  output:
+    checkpoint_dir: "part2-decoding/checkpoints/separate-bit-decoder"
+    results: "part2-decoding/data/separate-bit-decoder/training_summary.json"

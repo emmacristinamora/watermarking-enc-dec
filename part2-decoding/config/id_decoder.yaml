@@ -1,0 +1,47 @@
+# part2-decoding/config/id_decoder.yaml
+
+
+# === ID DECODER — SHARED-BACKBONE EXPERIMENTS ===
+
+# Config for 01_train_id_decoder.py.
+# All three experiments (baseline + 2 ablations) share the data and training
+# settings below. Per-experiment overrides live under `experiments`.
+# Select an experiment at runtime with --experiment <name>.
+
+id_decoder:
+  data:
+    images_dir: "part1-encoding/data/decoder-dataset/watermarked-data"
+    metadata_file: "metadata.json"
+    splits_file: "splits.json"
+    num_bits: 8
+    num_workers: 4
+
+  training:
+    seed: 42
+    num_epochs: 30
+    learning_rate: 0.0001
+
+  experiments:
+    baseline_resnet50:
+      architecture: resnet50
+      pretrained: true
+      image_size: 1024
+      batch_size: 16
+      checkpoint: "part2-decoding/checkpoints/id-decoders/baseline_resnet50.pth"
+      results: "part2-decoding/data/id-decoders/baseline_resnet50.json"
+
+    ablation1_efficientnet_b0:
+      architecture: efficientnet_b0
+      pretrained: true
+      image_size: 1024
+      batch_size: 12
+      checkpoint: "part2-decoding/checkpoints/id-decoders/ablation1_efficientnet_b0.pth"
+      results: "part2-decoding/data/id-decoders/ablation1_efficientnet_b0.json"
+
+    ablation2_resolution_512:
+      architecture: resnet50
+      pretrained: true
+      image_size: 512
+      batch_size: 16
+      checkpoint: "part2-decoding/checkpoints/id-decoders/ablation2_resolution_512.pth"
+      results: "part2-decoding/data/id-decoders/ablation2_resolution_512.json"
